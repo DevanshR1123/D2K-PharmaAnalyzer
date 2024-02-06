@@ -37,7 +37,7 @@ export default function Home() {
   const [data, setData] = useState<ImageData[]>([]);
 
   return (
-    <main className="grid h-screen grid-flow-col bg-primary p-16">
+    <main className="grid grid-flow-col bg-slate-700 p-8">
       <form
         onSubmit={async (e) => {
           e.preventDefault();
@@ -50,7 +50,6 @@ export default function Home() {
               body: data,
             });
             const json = await res.json();
-            console.log(json);
             setData(json);
           } catch (error) {
             console.error(error);
@@ -59,7 +58,7 @@ export default function Home() {
             setImage(null);
           }
         }}
-        className="grid max-w-[400px] gap-4 place-self-start rounded bg-primary-foreground p-4"
+        className="grid h-min max-w-[400px] gap-4 rounded-xl bg-primary-foreground p-4"
       >
         {image ? (
           <>
@@ -69,6 +68,7 @@ export default function Home() {
                 alt="Uploaded image"
                 width={300}
                 height={300}
+                className="h-[300px] object-contain"
               />
             </div>
             <Button onClick={() => setImage(null)} disabled={loading}>
@@ -101,7 +101,7 @@ export default function Home() {
           </>
         )}
       </form>
-      <div className="grid max-h-full gap-4 place-self-start overflow-y-auto rounded bg-primary-foreground p-4">
+      <div className="grid max-h-96 grid-cols-2 gap-4 place-self-start overflow-y-auto rounded-xl bg-primary-foreground p-4">
         {data.length > 0 ? (
           data.map((d, i) => (
             <Card key={i} className="bg-primary text-secondary">

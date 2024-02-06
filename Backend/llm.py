@@ -61,13 +61,13 @@ def get_insights(image):
     N = Name of the product
     I = illumination level  of the product beteween 0 to 1
     V = visibility of the product between 0 to 1
-    P = placement in the shelf relative to eye level
-    C = proportional coverage of the shelf by the product
+    P = placement in the shelf relative to eye level (above, below, at eye level, etc.)
+    C = proportional coverage of the shelf by the product (minimal, moderate, full, etc.)
     B = the bounding box (x1, x2, y1, y2) of the product
     
     Respond in the format for each product as rows of csv: (N, I, V, P, C, X1, X2, Y1, Y2)
     Only provide the data for the detected products and ignore the rest of the shelf.
-    Only respond with the products with high confidence.
+    Only respond with the products with highest confidence.
     Response:
     """,
     ]
