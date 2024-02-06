@@ -37,7 +37,7 @@ export default function Home() {
   const [data, setData] = useState<ImageData[]>([]);
 
   return (
-    <main className="grid grid-flow-col bg-slate-700 p-8">
+    <main className="grid grid-flow-col gap-8 bg-slate-700 p-8">
       <form
         onSubmit={async (e) => {
           e.preventDefault();

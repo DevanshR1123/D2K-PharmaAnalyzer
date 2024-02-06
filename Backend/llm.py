@@ -1,7 +1,7 @@
 import base64
+import json
 import os
 import re
-import json
 
 import cv2 as cv
 import google.generativeai as genai
@@ -54,7 +54,7 @@ def get_insights(image):
             }
         },
         f"""
-    This an image of a shelf in a shelf in a pharmaceutical store.
+    This an image of a shelf in a pharmaceutical store.
     Perform object detection the various different products and provide the following information.
     The image of size: w={col} h={row}
     
@@ -62,7 +62,7 @@ def get_insights(image):
     I = illumination level  of the product beteween 0 to 1
     V = visibility of the product between 0 to 1
     P = placement in the shelf relative to eye level (above, below, at eye level, etc.)
-    C = proportional coverage of the shelf by the product (minimal, moderate, full, etc.)
+    C = proportional coverage of the shelf by the product (minimal, moderate, full, etc.`)
     B = the bounding box (x1, x2, y1, y2) of the product
     
     Respond in the format for each product as rows of csv: (N, I, V, P, C, X1, X2, Y1, Y2)

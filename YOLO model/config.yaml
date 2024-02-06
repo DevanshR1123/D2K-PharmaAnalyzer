@@ -1,0 +1,6 @@
+---
+train: ./train/images
+val: ./valid/images 
+nc: 6
+names: ['Omnicef-D', 'Emeset', 'Theo-Asthalin', 'Zincovit', 'pantop-d', 'Thyrocab']
+...

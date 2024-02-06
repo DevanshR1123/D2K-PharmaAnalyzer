@@ -2,6 +2,7 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 import os
 from llm import get_insights
+from yolo import calculate_incentive
 
 
 app = Flask(__name__)
@@ -17,6 +18,13 @@ def hello():
 def api():
     data = request.files.get("image")
     output = get_insights(data.read())
+    return jsonify(output)
+
+
+@app.route("/yolo", methods=["POST"])
+def yolo():
+    data = request.files.get("image")
+    output = calculate_incentive(data.read())
     return jsonify(output)
 
 
